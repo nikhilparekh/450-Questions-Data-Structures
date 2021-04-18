@@ -1,18 +1,16 @@
-# Check if a string is palindrome or not
+# Find the duplicate characters in a string and return the number of times it occurs
 
+s = "test string"
 
-s = "saippuakivikauppias"
+def find_dup(s):
+    di = {}
+    for i in s:
+        if i in di:
+            di[i]+=1
+        else:
+            di[i]=1
+    for i in di:
+        if di[i]>1:
+            print(i,di[i])
 
-def palindrome(s):
-    if len(s)<2:
-        return True
-    i = 0
-    j = len(s)-1
-    while(j>=i):
-        if s[i]!=s[j]:
-            return False
-        i+=1
-        j-=1
-    return True
-
-print(palindrome(s))
+find_dup(s)
